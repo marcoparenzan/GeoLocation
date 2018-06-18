@@ -1,0 +1,23 @@
+﻿<html>
+
+<body>
+    <h1>Geolocator</h1>
+    <div id="position"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+    $(function(){
+
+        setInterval(function () {
+            navigator.geolocation.getCurrentPosition(function (e) {
+
+                $("#position").html(e.coords.longitude + " " + e.coords.latitude);
+            });
+        }, 1000);
+
+    });
+
+</script>
+
+</html>
